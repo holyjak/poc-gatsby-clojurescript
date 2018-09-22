@@ -1,6 +1,12 @@
 {
   "name": "exp-gatsby-cljs",
   "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack-dev-server --hot-only",
+    "watch": "shadow-cljs watch app",
+    "compile": "shadow-cljs compile app",
+    "build": "npm run compile && npx webpack && npx http-server dist/"
+  },
   "dependencies": {
     "@telia/styleguide": "1.11.9",
     "axios": "^0.18.0",
@@ -14,5 +20,13 @@
   },
   "optionalDependencies": {
     "react": "15.6.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.5",
+    "http-server": "^0.10.0",
+    "source-map-loader": "^0.2.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
   }
 }

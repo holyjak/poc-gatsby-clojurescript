@@ -3,10 +3,8 @@
 
 (defn simple-example []
   [:div
-   [:p "Hello world, it is Reagent speaking!"]])
+   [:p {:style {:background-color :red}} "Hello from app.brand!"]])
 
 (defn ^:export run []
   (r/render [simple-example]
-    (js/document.getElementById "app")))
-
-(run)
+    (js/document.getElementById "brand")))

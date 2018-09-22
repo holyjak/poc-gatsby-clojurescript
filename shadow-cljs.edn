@@ -6,11 +6,10 @@
  ;:nrepl {:init-ns shadow.user} ; the ns to start in
  :builds {:app {;:target :npm-module :output-dir "compiled/"
                 :output-dir "target/"
-                :asset-path "."
-                :target :browser
+                :target :npm-module
                 :modules {:shared {:entries []}
                           :main {:entries [app.main] :depends-on #{:shared}}
                           :brand {:entries [app.templates.brand] :depends-on #{:shared}}}
-                :devtools {:after-load app.main/reload!
+                :devtools {;:after-load app.main/reload!
                            :http-root "target"
                            :http-port 8080}}}}

@@ -3,12 +3,13 @@ Dev
 
 Terminal:
 
-    # compile and watch
-    shadow-cljs watch app
+```
+# compile and watch
+shadow-cljs watch app
 
-    # connect to REPL for the build (available while watch is running)
-    shadow-cljs cljs-repl app
-
+# connect to REPL for the build (available while watch is running)
+shadow-cljs cljs-repl app
+```
 
 IntelliJ:
 
@@ -35,8 +36,18 @@ WIP
 Webpack
 -------
 
-See https://github.com/minimal-xyz/minimal-shadow-cljs-webpack, https://github.com/minimal-xyz/minimal-shadow-cljs-webpack
+Do:
 
-=>
+```
+cp assets/index.html dist
+shadow-cljs watch app # term 1
+npm run dev # term 2
+# => go to http://localhost:8081/ # or 8080, see terminal
+shadow-cljs cljs-repl app # for the REPL, after loading the page
+```
 
- * Compile as npm module, `require` from the page, webpack; Q: What about hot code reloading?!
+Then edit main.cljs and see it in use.
+
+Based on https://github.com/minimal-xyz/minimal-shadow-cljs-webpack.
+
+**BEWARE:** You may need to config externs to make ``:advanced` mode work.

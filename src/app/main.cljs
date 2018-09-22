@@ -1,8 +1,14 @@
-(ns app.main)
-(def value-a 1)
-(defonce value-b 2)
-(defn reload! []
-  (println "Code updated.")
-  (println "Trying values:" value-a value-b))
-(defn main! []
-  (println "App loaded!"))
+(ns app.main
+    (:require [reagent.core :as r]))
+
+(defn init []
+  (println "init"))
+
+(defn start []
+  (println "start")
+  (r/render [:div {:style {:border "1px black solid"}} "Hi, main.cljs here!"]
+    (js/document.getElementById "app"))
+  {::app true})
+
+(defn stop [app]
+  (prn [:stop app]))
