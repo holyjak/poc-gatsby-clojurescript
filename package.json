@@ -1,0 +1,18 @@
+{
+  "name": "exp-gatsby-cljs",
+  "version": "1.0.0",
+  "dependencies": {
+    "@telia/styleguide": "1.11.9",
+    "axios": "^0.18.0",
+    "classnames": "2.2.5",
+    "gatsby": "^1.9.247",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-favicon": "^2.1.1",
+    "gatsby-plugin-google-tagmanager": "^1.0.19",
+    "gatsby-plugin-less": "^1.1.8",
+    "gatsby-plugin-react-helmet": "^2.0.10"
+  },
+  "optionalDependencies": {
+    "react": "15.6.0"
+  }
+}
