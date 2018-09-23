@@ -39,8 +39,7 @@ Gatsby
 **TODO:**
 
 * ✅ modify the produced npm module to export React components
-* use these from the pages
-    - needed `npm i create-react-class --save` used by Reagent ?!
+* ✅ use these from the pages
 * verify hot code reload (see former `../exp-gatsby-cljs.pre-gatsby/webpack-entrypoint.js`)
 * Hook running shadow-cljs into gatsby build
 * Try to use non-cljs React component from cljs (eg layout - easier to add to existing prj, Gatsby's Link)

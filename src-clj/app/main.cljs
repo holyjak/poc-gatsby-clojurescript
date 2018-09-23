@@ -4,8 +4,12 @@
 (defn init []
   (println "init"))
 
-(defn ^:export body []
-    [:div {:style {:border "1px black solid"}} "Hi, main.cljs here!"])
+(defn body-reagent []
+    (r/as-element
+        [:div {:style {:border "1px black solid"}} "Hi, main.cljs here!"]))
+
+;; Make into a component we can use from JS/JSX:
+(def body (r/reactify-component body-reagent))
 
 (defn start []
   (println "start")

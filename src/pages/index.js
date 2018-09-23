@@ -3,7 +3,13 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 
-const MainBody = require('../../target/app.main').body;
+const MainBody = require('app.main').body;
+
+// TODO Tmp - move elsewhere
+if (process.env.NODE_ENV !== "production") {
+  window["$CLJS"] = require("cljs_env");
+  require("shadow.cljs.devtools.client.browser");
+}
 
 const IndexPage = () => (
   <Layout>
