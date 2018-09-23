@@ -40,10 +40,11 @@ Gatsby
 
 * ✅ modify the produced npm module to export React components
 * ✅ use these from the pages
-* verify hot code reload (see former `../exp-gatsby-cljs.pre-gatsby/webpack-entrypoint.js`)
-* Hook running shadow-cljs into gatsby build
-* Try to use non-cljs React component from cljs (eg layout - easier to add to existing prj, Gatsby's Link)
+* ✅ verify hot code reload - both reload (change in `main.cljs`) and cljs repl work
+* ✅ Try to use non-cljs React component from cljs (eg layout - easier to add to existing prj, Gatsby's Link)
+* Moe `require("shadow.cljs.devtools.client.browser")` from `index.js` to a single place (webpack config???)
 * Create pages 100% in cljs, w/o including a cljs-produced component in a `pages/*.js` - likely will need `createPages.js`?
+* Hook running shadow-cljs into gatsby build
 
 Webpack
 -------
