@@ -1,32 +1,32 @@
 {
-  "name": "exp-gatsby-cljs",
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
   "version": "1.0.0",
-  "scripts": {
-    "dev": "webpack-dev-server --hot-only",
-    "watch": "shadow-cljs watch app",
-    "compile": "shadow-cljs compile app",
-    "build": "npm run compile && npx webpack && npx http-server dist/"
-  },
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@telia/styleguide": "1.11.9",
-    "axios": "^0.18.0",
-    "classnames": "2.2.5",
-    "gatsby": "^1.9.247",
-    "gatsby-link": "^1.6.40",
-    "gatsby-plugin-favicon": "^2.1.1",
-    "gatsby-plugin-google-tagmanager": "^1.0.19",
-    "gatsby-plugin-less": "^1.1.8",
-    "gatsby-plugin-react-helmet": "^2.0.10"
+    "gatsby": "^2.0.0",
+    "gatsby-plugin-manifest": "^2.0.2",
+    "gatsby-plugin-offline": "^2.0.5",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-helmet": "^5.2.0"
   },
-  "optionalDependencies": {
-    "react": "15.6.0"
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write '**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "css-loader": "^0.28.5",
-    "http-server": "^0.10.0",
-    "source-map-loader": "^0.2.1",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.7.1"
+    "prettier": "^1.14.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   }
 }
