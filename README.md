@@ -39,12 +39,23 @@ Gatsby
 **TODO:**
 
 * ✅ modify the produced npm module to export React components
-* ✅ use these from the pages
+* ✅ use these from the pages - see https://github.com/reagent-project/reagent/blob/master/doc/InteropWithReact.md To simulate `export default ...` use `:exports-var` in the shadow config
 * ✅ verify hot code reload - both reload (change in `main.cljs`) and cljs repl work
-* ✅ Try to use non-cljs React component from cljs (eg layout - easier to add to existing prj, Gatsby's Link)
-* Moe `require("shadow.cljs.devtools.client.browser")` from `index.js` to a single place (webpack config???)
+* ✅ Try to use non-cljs React component from cljs (eg layout - easier to add to existing prj, Gatsby's Link) - ok as long as plain .js, see below
+* ❌ Try to use existing `layout.js` from Cljs so that we could define essentially the whole page in cljs, reusing existing code - failed, can require plain JS but not JSX => either rewrite to cljs or have a more involved wrapper .js file
+* ✅ Create 2 separate pages: `/` and `/brand/tesla`
+* Move `require("shadow.cljs.devtools.client.browser")` from `index.js` to a single place (webpack config???)
 * Create pages 100% in cljs, w/o including a cljs-produced component in a `pages/*.js` - likely will need `createPages.js`?
 * Hook running shadow-cljs into gatsby build
+* Verify `:advanced` compilation
+* GraphQL - how to integrate? (wrapper `<page>.js` with just `require`, element use, and a query?)
+* Compate the size of a plain JS/TS and :advanced optimized Cljs apps
+
+### Caveats
+
+#### Require .js from .cljs: no JSX
+
+This is possible (add the js src dir to `:source-paths`, require `"/path/to/file"`) but it only supports plain JS, not e.g. JSX.
 
 Webpack
 -------

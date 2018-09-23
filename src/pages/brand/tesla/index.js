@@ -4,9 +4,9 @@
  */
 import React from 'react'
 
-import Layout from '../components/layout'
+import Layout from '../../../components/layout'
 
-const MainBody = require('app.main').Body;
+const BrandBody = require('app.templates.brand').Body;
 
 // TODO Tmp - move elsewhere
 if (process.env.NODE_ENV !== "production") {
@@ -14,10 +14,10 @@ if (process.env.NODE_ENV !== "production") {
   require("shadow.cljs.devtools.client.browser");
 }
 
-const IndexPage = () => (
+const BrandPage = () => (
   <Layout>
-    <MainBody></MainBody>
+    <BrandBody brand="Tesla" />
   </Layout>
 )
 
-export default IndexPage
+export default BrandPage

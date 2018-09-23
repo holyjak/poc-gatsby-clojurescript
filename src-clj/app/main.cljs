@@ -3,24 +3,19 @@
         [reagent.core :as r]
         ["gatsby" :refer (Link)]))
 
-(defn init []
-  (println "init"))
+(defn body []
+    [:div
+        {:style {:border "1px black solid"}}
+        [:p "Hi, main.cljs IS here!"]
+        [:p [:> Link {:to "/brand/tesla/"} "Go to the Tesla brand page"]]])
 
-(defn body-reagent []
-    (r/as-element
-        [:div
-            {:style {:border "1px black solid"}}
-            [:p "Hi, main.cljs IS here!"]
-            [:> Link {:to "/page-2/"} "Go to page 2"]]))
+(def Body (r/reactify-component body))
 
-;; Make into a component we can use from JS/JSX:
-(def body (r/reactify-component body-reagent))
-
-(defn start []
-  (println "start")
-  (r/render [body]
-    (js/document.getElementById "app"))
-  {::app true})
-
-(defn stop [app]
-  (prn [:stop app]))
+;; This does not work for we can't require a JSX file:
+; :require ["/components/layout" :as Layout]
+; (defn page []
+;     [:> Layout
+;         [body]])
+;
+; ;; Make into a component we can use from JS/JSX:
+; (def IndexPage (r/reactify-component page))

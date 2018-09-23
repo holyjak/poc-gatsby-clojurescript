@@ -1,10 +1,9 @@
 (ns app.templates.brand
     (:require [reagent.core :as r]))
 
-(defn ^:export body []
+(defn body [{:keys [brand]}]
   [:div
-   [:p {:style {:background-color :red}} "Hello from app.brand!"]])
+   [:p {:style {:background-color :red}}
+       (str "Awesome brand page for " brand)]])
 
-(defn ^:export run []
-  (r/render [body]
-    (js/document.getElementById "brand")))
+(def Body (r/reactify-component body))
