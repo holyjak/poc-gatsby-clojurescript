@@ -1,0 +1,15 @@
+{;:lein true ; => ignores :dependencies, :source-paths
+ :source-paths ["src-clj"]
+ :dependencies [[reagent "0.7.0" :exclusions [cljsjs/react]] ; => react 15 ; 0.8.1 => react 16.4
+                [reagent-forms "0.5.35"]
+                [reagent-utils "0.2.1"]]
+ ;:nrepl {:init-ns shadow.user} ; the ns to start in
+ :builds {:app {;:target :npm-module :output-dir "compiled/"
+                :output-dir "target/"
+                :target :npm-module
+                :modules {:shared {:entries []}
+                          :main {:entries [app.main] :depends-on #{:shared}}
+                          :brand {:entries [app.templates.brand] :depends-on #{:shared}}}
+                :devtools {;:after-load app.main/reload!
+                           :http-root "target"
+                           :http-port 8080}}}}

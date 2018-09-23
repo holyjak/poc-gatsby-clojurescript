@@ -1,8 +1,6 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "exp-gatsby-cljs",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "gatsby": "^2.0.0",
     "gatsby-plugin-manifest": "^2.0.2",
@@ -15,8 +13,11 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "http://unlicense.org/",
   "scripts": {
+    "dev": "webpack-dev-server --hot-only",
+    "watch": "shadow-cljs watch app",
+    "compile": "shadow-cljs compile app",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
@@ -24,9 +25,5 @@
   },
   "devDependencies": {
     "prettier": "^1.14.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   }
 }
