@@ -4,4 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+/* Activate support for Cljs REPL at each physical page */
+export const wrapRootElement = ({ element }) => {
+    if (process.env.NODE_ENV !== "production") {
+      window["$CLJS"] = require("cljs_env");
+      require("shadow.cljs.devtools.client.browser"); // .target/ is on Node Path so we can do this
+    }
+  return element;
+}

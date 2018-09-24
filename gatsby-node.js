@@ -18,14 +18,11 @@ exports.onCreateWebpackConfig = ({
       // Make it easier to resolve cljs-generated files withotu ../..:
       modules: [
           path.resolve(__dirname, "target"),
-          path.resolve(__dirname, "src-extra"), 
           "node_modules"],
     },
     module: {
-      rules: [
-        {
-            test: /.*\/pages\/.*\.js$/,
-            use: path.resolve('./cljs-dev-support-loader.js'),
+      // rules: [
+      //   {
       //     test: /\.less$/,
       //     use: [
       //       // We don't need to add the matching ExtractText plugin
@@ -38,8 +35,8 @@ exports.onCreateWebpackConfig = ({
       //       loaders.postcss(),
       //       `less-loader`,
       //     ],
-        },
-      ],
+      //   },
+      // ],
     },
     // plugins: [
     //   }),
