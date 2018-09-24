@@ -8,12 +8,6 @@ import Layout from '../../../components/layout'
 
 const BrandBody = require('app.templates.brand').Body;
 
-// TODO Tmp - move elsewhere
-if (process.env.NODE_ENV !== "production") {
-  window["$CLJS"] = require("cljs_env");
-  require("shadow.cljs.devtools.client.browser");
-}
-
 const BrandPage = () => (
   <Layout>
     <BrandBody brand="Tesla" />

@@ -16,11 +16,16 @@ exports.onCreateWebpackConfig = ({
   actions.setWebpackConfig({
     resolve: {
       // Make it easier to resolve cljs-generated files withotu ../..:
-      modules: [path.resolve(__dirname, "target"), "node_modules"],
+      modules: [
+          path.resolve(__dirname, "target"),
+          path.resolve(__dirname, "src-extra"), 
+          "node_modules"],
     },
     module: {
-      // rules: [
-      //   {
+      rules: [
+        {
+            test: /.*\/pages\/.*\.js$/,
+            use: path.resolve('./cljs-dev-support-loader.js'),
       //     test: /\.less$/,
       //     use: [
       //       // We don't need to add the matching ExtractText plugin
@@ -33,12 +38,10 @@ exports.onCreateWebpackConfig = ({
       //       loaders.postcss(),
       //       `less-loader`,
       //     ],
-      //   },
-      // ],
+        },
+      ],
     },
     // plugins: [
-    //   plugins.define({
-    //     __DEVELOPMENT__: stage === `develop` || stage === `develop-html`,
     //   }),
     // ],
   })
