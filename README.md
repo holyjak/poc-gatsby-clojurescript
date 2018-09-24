@@ -48,6 +48,7 @@ Gatsby
 * Verify `:advanced` compilation
 * GraphQL - how to integrate? (wrapper `<page>.js` with just `require`, element use, and a query?)
 * Compare the size of a plain JS/TS and :advanced optimized Cljs apps
+* Verify production debugging support - source maps, helpful stack traces?
 
 Bonus:
 

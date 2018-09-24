@@ -1,8 +1,8 @@
 {;:lein true ; => ignores :dependencies, :source-paths
  :source-paths ["src-clj"]
- :dependencies [[reagent "0.7.0" :exclusions [cljsjs/react]] ; => react 15 ; 0.8.1 => react 16.4
-                [reagent-forms "0.5.35"]
-                [reagent-utils "0.2.1"]]
+ :dependencies [[reagent "0.8.1" :exclusions [cljsjs/react]]
+                [reagent-forms "0.5.43"]
+                [reagent-utils "0.3.1"]]
  ;:nrepl {:init-ns shadow.user} ; the ns to start in
  :builds {:app {;:target :npm-module :output-dir "compiled/"
                 :output-dir "target/"
