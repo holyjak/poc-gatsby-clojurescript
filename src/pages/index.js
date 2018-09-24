@@ -6,11 +6,11 @@ import React from 'react'
 
 import Layout from '../components/layout'
 
-const MainBody = require('app.main').Body;
+import { Body as MainBody } from 'app.main';
 
 const IndexPage = () => (
   <Layout>
-    <MainBody></MainBody>
+    <MainBody />
   </Layout>
 )
 

@@ -45,15 +45,43 @@ Gatsby
 * ❌ Try to use existing `layout.js` from Cljs so that we could define essentially the whole page in cljs, reusing existing code - failed, can require plain JS but not JSX => either rewrite to cljs or have a more involved wrapper .js file
 * ✅ Create 2 separate pages: `/` and `/brand/tesla`
 * ✅ Move `require("shadow.cljs.devtools.client.browser")` from `index.js` to a single place (webpack config???)
-* Verify `:advanced` compilation
+* ✅ Verify `:advanced` compilation
+* ✅ Compare the size of a plain JS/TS and :advanced optimized Cljs apps
 * GraphQL - how to integrate? (wrapper `<page>.js` with just `require`, element use, and a query?)
-* Compare the size of a plain JS/TS and :advanced optimized Cljs apps
 * Verify production debugging support - source maps, helpful stack traces?
 
 Bonus:
 
 * Create pages 100% in cljs, w/o including a cljs-produced component in a `pages/*.js` - likely will need `createPages.js`?
 * Hook running shadow-cljs into gatsby build
+
+### Size of Gatsby with Cljs x plain JS
+
+Cljs on the home page:
+
+| file                                 | size    |
+--------------------------------------------------
+| component---src-pages-index-js-...js | 1.2 kB  |
+| app-...js                            | 166 kB  |
+| 0-...js                              | 22.4 kB |
+| 1-...js                              | 10.5 kB |
+| 2-...js                              | **146 kB**  |
+| 10-...js                             | 1.6 kB  |
+| webpack-runtime-...js                | 4.2 kB  |
+| **TOTAL**                            | ± 350 kB |
+
+Plain JS on the home page:
+
+| file                                 | size    |
+--------------------------------------------------
+| component---src-pages-index-js-...js | 3.6 kB  |
+| app-...js                            | 165 kB  |
+| 0-...js                              | 22.4 kB |
+| 6-...js                              | 1.3 kB  |
+| webpack-runtime-...js                | 3.8 kB  |
+| **TOTAL**                            | ± 200 kB |
+
+so the Cljs version is about 150 kB (uncompressed) bigger.
 
 ### Caveats
 

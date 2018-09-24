@@ -6,4 +6,4 @@
    [:p {:style {:background-color :red}}
        (str "Awesome brand page for " brand)]])
 
-(def Body (r/reactify-component body))
+(def ^:export Body (r/reactify-component body))

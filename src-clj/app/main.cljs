@@ -9,7 +9,7 @@
         [:p "Hi, main.cljs IS here!"]
         [:p [:> Link {:to "/brand/tesla/"} "Go to the Tesla brand page"]]])
 
-(def Body (r/reactify-component body))
+(def ^:export Body (r/reactify-component body))
 
 ;; This does not work for we can't require a JSX file:
 ; :require ["/components/layout" :as Layout]

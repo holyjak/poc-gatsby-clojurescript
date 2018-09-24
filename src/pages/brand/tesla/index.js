@@ -6,7 +6,7 @@ import React from 'react'
 
 import Layout from '../../../components/layout'
 
-const BrandBody = require('app.templates.brand').Body;
+import { Body as BrandBody } from 'app.templates.brand';
 
 const BrandPage = () => (
   <Layout>
