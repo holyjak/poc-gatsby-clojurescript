@@ -4,7 +4,7 @@
         ["gatsby" :refer (Link)]))
 
 (defn body []
-    [:div
+    [:div.clj
         {:style {:border "1px black solid"}}
         [:p "Hi, main.cljs IS here!"]
         [:p [:> Link {:to "/brand/tesla/"} "Go to the Tesla brand page"]]])

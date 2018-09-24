@@ -622,3 +622,10 @@ pre tt:after {
     font-size: 100%;
   }
 }
+.clj {
+    /* Img source: https://github.com/OlegIlyenko/clojure-icons/blob/master/clojure-light-blue-wallpaper.jpg; CC BY 4.0*/
+    background-image: url(../images/clojure-light-blue-wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 30em;
+}
